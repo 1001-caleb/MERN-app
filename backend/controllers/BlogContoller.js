@@ -54,7 +54,7 @@ export const updateBlog = async (req, res) => {
 // delete a record
 export const deleteBlog = async (req, res) => {
     try {
-        BlogModel.destroy(req.body, {
+        await BlogModel.destroy({
             where: { id: req.params.id }
         })
         res.json({
