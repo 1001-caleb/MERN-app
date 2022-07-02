@@ -36,13 +36,13 @@ const ShowBlogs = () => {
                         </thead>
                         <tbody>
                             {
-                                blogs.map((blog) => (
-                                    <tr key={blog.id}>
+                                blogs.map((blog, index) => (
+                                    <tr key={index}>
                                         <td>{blog.title}</td>
                                         <td>{blog.content}</td>
                                         <td>
-                                            <Link to={`/edit/${blog.id}`} className='btn btn-info'><i className='fas fa-edit'></i></Link>
-                                            <button onClick={() => deleteBlog(blog.id)} className='btn btn-danger'><i className='fas fa-trash-alt'></i></button>
+                                            <Link to={`/edit/${blog._id}`} className='btn btn-info'><i className='fas fa-edit'></i></Link>
+                                            <button onClick={() => deleteBlog(blog._id)} className='btn btn-danger'><i className='fas fa-trash-alt'></i></button>
                                         </td>
                                     </tr>
                                 ))
